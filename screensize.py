@@ -1,31 +1,27 @@
-import turtle as trtl
-import random
+import turtle
 
-painter = trtl.Turtle()
 
-trtl.screensize(800,800)
-painter.speed(0)
+screen = turtle.Screen()
+screen.setup(width=800, height=800)
 
-rainbow_colors = [ #AI Generated. Prompt: Generate a python list of 10 colors in the rainbow
-    "Red",
-    "Orange",
-    "Yellow",
-    "Green",
-    "Blue",
-]
 
-position = painter.pos()
+painter = turtle.Turtle()
+painter.hideturtle()
+painter.speed(0) 
 
-for i in reversed(range(5)):
-    size = (i+1)*150
+num_objects = 5  
+object_size = 20  
+
+total_space = 800 - 2 * object_size
+spacing = total_space / (num_objects - 1) if num_objects > 1 else 0
+
+start_x = -total_space / 2
+start_y = 0
+for i in range(num_objects):
+    x = start_x + i * spacing
     painter.penup()
-    painter.goto(position[0]-size/2,position[1]+size/2)
-    painter.begin_fill()
+    painter.goto(x, start_y)
     painter.pendown()
-    painter.fillcolor(random.choice(rainbow_colors))
-    for g in range(4):
-        painter.forward(size)
-        painter.right(90)
-    painter.end_fill()
+    painter.circle(object_size) 
 
-trtl.done()
+turtle.done()
