@@ -138,7 +138,7 @@ while flowerType is None or flowerNum is None:
         messagebox.showinfo("Missing Flower Type", "Please enter a valid type of flower.")
 ```
 
-##Undecidable Problem
+## Undecidable Problem
 ### Code
 ```python
 while True:
