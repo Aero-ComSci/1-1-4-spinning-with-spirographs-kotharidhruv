@@ -148,4 +148,4 @@ print("done")
 ```
 
 ### Explanation
-In this code, the while loop keeps on running until something breaks the loop since we're saying ```while True```. When we write ```break```, there is no True or False statement being passed, making the loop undecidable.
+In this code, the while loop keeps on running until something breaks the loop since we're saying ```while True```. When we write ```break```, there is no True or False statement being passed, making the loop undecidable. Since there is nothing being passed to escape the loop, the print statement will never be executed.
