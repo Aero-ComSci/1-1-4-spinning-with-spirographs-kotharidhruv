@@ -37,6 +37,35 @@ Use the forward() and right() methods to draw the sides of the squares.
 5. Answer to step 21
 6. Insert a screenshot or picture of the algorith you used for your tokenizer on the previous activity.
 7. Give an example of an undecidable problem, attach code.
-   
+
+## Zero Iteration and Infinite Loops
+### Zero Iteration Loops
+Zero iteration loops are loops that are never iterated over; hence the name 'Zero Iteration'
+
+For example,
+```python
+name = "Dhruv"
+
+while name=="Mr. Baez":
+   print("Hi, Mr. Baez")
+```
+In the code above, the name has been set to "Dhruv". The while loop is set to be iterated over when the name is "Mr. Baez". Since the ```while name=="Mr. Baez``` statement returns false, the while loop is never going to be iterated over.
+
+### Infinite Loops
+Infinite Loops are loops that get iterated over infinitely many times, until the program is manually terminated.
+
+For example,
+```python
+name = "Mr. Baez"
+
+while name=="Mr. Baez":
+   print("Hi, Mr. Baez")
+```
+In the code above, the name has been set to "Mr. Baez". As said before, the while loops is set to iterate when the name is "Mr. Baez". Since the while statement is returning ```True```, the statement in the while loop is being executed. Since we are not changing the value of ```name```, the print statement is being executed infinitely many times. That is why this type of loop is called the infinite loop.
+
+## Screen Size Problem
+[Link to solution to the problem](https://github.com/Aero-ComSci/1-1-4-spinning-with-spirographs-kotharidhruv/blob/e31ff41addaa5857ae774943b40f421d007f70e5/screensize.py)
+
+## Concentric Squares
 
 
