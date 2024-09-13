@@ -67,5 +67,85 @@ In the code above, the name has been set to "Mr. Baez". As said before, the whil
 [Link to solution to the problem](https://github.com/Aero-ComSci/1-1-4-spinning-with-spirographs-kotharidhruv/blob/e31ff41addaa5857ae774943b40f421d007f70e5/screensize.py)
 
 ## Concentric Squares
+Result:
+![concentric square result](https://github.com/Aero-ComSci/1-1-4-spinning-with-spirographs-kotharidhruv/blob/3c9ad8d4210827ba74426f68dd40507d8758fba5/concentric_squares_img.png "Concentric squares")
 
+The Code:
+```python
+import turtle as trtl
+import random
 
+painter = trtl.Turtle()
+
+painter.speed(100)
+
+rainbow_colors = [ #AI Generated. Prompt: Generate a python list of 10 colors in the rainbow
+    "Red",
+    "Orange",
+    "Yellow",
+    "Green",
+    "Blue",
+]
+
+position = painter.pos()
+
+for i in reversed(range(20)):
+    size = (i+1)*20
+    painter.penup()
+    painter.goto(position[0]-size/2,position[1]+size/2)
+    painter.begin_fill()
+    painter.pendown()
+    painter.fillcolor(random.choice(rainbow_colors))
+    for g in range(4):
+        painter.forward(size)
+        painter.right(90)
+    painter.end_fill()
+
+trtl.done()
+```
+## Step 21
+The algorithm shown represents  the program where we draw five circles and are trying to avoid the zero iteration loop.
+
+## Algorithm Used in the last Project
+```python
+flowerType = None
+flowerNum = None
+
+flowers = {
+    ("daisy","daisies"):[15,"white","yellow"],
+    ("sunflower","sunflowers"):[34,"yellow","#5C4033"],
+    ("tulip","tulips"):[3,"#f49a5f","#f49a5f"],
+    ("lily","lilies"):[3,"#ee82ee","#ee82ee"]
+}
+
+while flowerType is None or flowerNum is None:
+    userInp = turtle.textinput("Flower Drawing", "Please enter the type of flower you want and the number of flowers: ")
+    words = userInp.split()
+    for word in words:
+        for key in flowers.keys():
+            if word.lower() in key:
+                flowerType = key
+        if word.isdigit():
+            flowerNum = int(word)
+        elif word.lower()=='a':
+            flowerNum = 1
+
+    if flowerType is None and flowerNum is None:
+        messagebox.showinfo("Error", "Please enter a valid flower type and number of flowers.")
+    elif flowerType is not None and flowerNum is None:
+        messagebox.showinfo("Missing Number of Flowers", "Please enter the number of flowers.")
+    elif flowerType is None and flowerNum is not None:
+        messagebox.showinfo("Missing Flower Type", "Please enter a valid type of flower.")
+```
+
+##Undecidable Problem
+### Code
+```python
+while True:
+    pass
+
+print("done")
+```
+
+### Explanation
+In this code, the while loop keeps on running until something breaks the loop since we're saying ```while True```. When we write ```break```, there is no True or False statement being passed, making the loop undecidable.
